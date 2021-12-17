@@ -7,29 +7,23 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\DB;
 
+
 class RoleController extends Controller
 {
-
-    function __contruct()
+    function __construct()
     {
-        //middleware para los roles que pueden ver roles
-        $this->middleware('permission:view-role|create-role|edit-role|delete-role', ['only' => ['index']]);
-        //middleware para los roles que pueden crear roles
-        $this->middleware('permission:create-role', ['only' => ['create','store']]);
-        //middleware para los roles que pueden editar roles
-        $this->middleware('permission:edit-role', ['only' => ['edit','update']]);
-        //middleware para los roles que pueden borrar roles
-        $this->middleware('permission:delete-role', ['only' => ['destroy']]);
+        $this->middleware('permission:view-rol|create-rol|edit-rol|delete-rol', ['only' => ['index']]);
+        $this->middleware('permission:create-rol', ['only' => ['create','store']]);
+        $this->middleware('permission:edit-rol', ['only' => ['edit','update']]);
+        $this->middleware('permission:delete-rol', ['only' => ['destroy']]);
     }
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //Con paginación
+    public function index(Request $request)
+    {        
         $roles = Role::paginate(5);
         return view('roles.index',compact('roles'));
     }
@@ -55,13 +49,12 @@ class RoleController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|unique:roles,name',
-            'permission' => 'required',
         ]);
     
         $role = Role::create(['name' => $request->input('name')]);
         $role->syncPermissions($request->input('permission'));
     
-        return redirect()->route('roles.index'); 
+        return redirect()->route('roles.index');                        
     }
 
     /**
@@ -103,7 +96,6 @@ class RoleController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'permission' => 'required',
         ]);
     
         $role = Role::find($id);
@@ -112,7 +104,7 @@ class RoleController extends Controller
     
         $role->syncPermissions($request->input('permission'));
     
-        return redirect()->route('roles.index');
+        return redirect()->route('roles.index');                        
     }
 
     /**
@@ -124,6 +116,6 @@ class RoleController extends Controller
     public function destroy($id)
     {
         DB::table("roles")->where('id',$id)->delete();
-        return redirect()->route('roles.index');
+        return redirect()->route('roles.index');                        
     }
 }
