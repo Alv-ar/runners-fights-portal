@@ -62,6 +62,10 @@
                         Login
                     </button>
                 </div>
+                
+                <a href="{{ url('login/github') }}" class="btn btn-primary btn-lg btn-block">
+                    <span class="fa fa-github"></span> Log in with GitHub
+                </a> 
             </form>
         </div>
     </div>

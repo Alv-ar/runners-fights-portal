@@ -72,6 +72,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="flex items-center justify-end mt-4">
+                <a href="{{ url('login/github') }}" class="btn btn-primary btn-lg btn-block">
+                    <span class="fa fa-github"></span> Sign in with GitHub
+                </a> 
+                </div>
             </form>
         </div>
     </div>

@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +23,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::group(['middleware' => ['role:Administrator']], function() {
+Route::group(['middleware' => ['guest']], function() {
+    Route::get('login/github', [LoginController::class, 'github']);
+    Route::get('login/github/redirect', [LoginController::class, 'githubRedirect']);
+});
+
+Route::group(['middleware' => ['auth', 'role:Administrator']], function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
