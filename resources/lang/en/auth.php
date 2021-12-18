@@ -16,5 +16,21 @@ return [
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'login' => 'Login',
+    'login_github' => 'Iniciar sesión con GitHub',
+    'register' => 'Register',
+    'register_github' => 'Register with GitHub',
+    'full_name' => 'Full name',
+    'enter_full_name' => 'Enter full name',
+    'email' => 'Email',
+    'enter_email' => 'Enter Email',
+    'password' => 'Password',
+    'forgot_password' => 'Forgot Password?',
+    'enter_password' => 'Enter Password',
+    'set_password' => 'Set account password',
+    'confirm_password' => 'Confirm account password',
+    'remember_me' => 'Remember Me',
+    'already_account' => 'Already have an account ?'
+
 
 ];

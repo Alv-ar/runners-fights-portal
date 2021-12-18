@@ -18,5 +18,10 @@ return [
     'throttled' => 'Porfavor espera antes de volverlo a intentar.',
     'token' => 'Este token de reseteo de contraseña es invalido.',
     'user' => "No existen usuarios con ese correo electronico.",
+    'reset_password' => 'Restablecer contraseña',
+    'reset_link' => 'Enviar link para restablecer contraseña',
+    'recalled_login_info' => 'Recordó su información de inicio de sesión?',
+
+
 
 ];
