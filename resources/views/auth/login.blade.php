@@ -66,6 +66,9 @@
                 <a href="{{ url('login/github') }}" class="btn btn-primary btn-lg btn-block">
                     <span class="fa fa-github"></span> {{ __('auth.login_github')}}
                 </a> 
+                <a href="{{ url('login/google') }}" class="btn btn-primary btn-lg btn-block">
+                    <span class="fa fa-google"></span> {{ __('auth.login_github')}}
+                </a> 
             </form>
         </div>
     </div>

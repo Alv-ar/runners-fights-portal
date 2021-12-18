@@ -33,6 +33,9 @@ Auth::routes();
 Route::group(['middleware' => ['guest']], function() {
     Route::get('login/github', [LoginController::class, 'github']);
     Route::get('login/github/redirect', [LoginController::class, 'githubRedirect']);
+    Route::get('login/google', [LoginController::class, 'google']);
+    Route::get('login/google/redirect', [LoginController::class, 'googleRedirect']);
+
 });
 
 Route::group(['middleware' => ['auth', 'role:Administrator']], function() {

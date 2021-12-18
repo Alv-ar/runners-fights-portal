@@ -64,4 +64,25 @@ class LoginController extends Controller
 
         return redirect('/');
     }
+
+    public function google(){
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function googleRedirect() {
+        $user = Socialite::driver('google')->user();
+
+        //dd($user);
+
+        $user = User::firstOrCreate([
+            'email' => $user->email
+        ], [
+            'name' => $user->name,
+            'password' => Hash::make(Str::random(24))
+        ]);
+
+        Auth::login($user, true);
+
+        return redirect('/');
+    }
 }
