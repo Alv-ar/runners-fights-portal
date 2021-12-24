@@ -32,9 +32,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">About the game</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Album</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ranking">Ranking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -47,7 +48,7 @@
             <div class="masthead-subheading">Welcome To Runners Fights!</div>
             <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
-            <ul class="nav justify-content-center">
+            <ul class="nav justify-content-center pt-5">
                 @if(Route::has('login'))
                 @auth
                 <li class="nav-item"><a href="{{ url('logout') }}" class="nav-link" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
@@ -231,7 +232,7 @@
         </div>
     </section>
     <!-- Video-->
-    <section class="page-section" id="video">
+    <section class="page-section" id="ranking">
     </section>
     <!-- About-->
     <section class="page-section" id="about">
@@ -311,31 +312,41 @@
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/1.jpg') }}" alt="..." />
-                        <h4>Parveen Anand</h4>
+                        <h4>Keen Abril</h4>
                         <p class="text-muted">Lead Designer</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/2.jpg') }}" alt="..." />
-                        <h4>Diana Petersen</h4>
+                        <h4>Roger Capdevila</h4>
                         <p class="text-muted">Lead Marketer</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/3.jpg') }}" alt="..." />
-                        <h4>Larry Parker</h4>
+                        <h4>Raul Díaz</h4>
                         <p class="text-muted">Lead Developer</p>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/1.jpg') }}" alt="..." />
+                        <h4>Alvar Recamales</h4>
+                        <p class="text-muted">Lead Designer</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
