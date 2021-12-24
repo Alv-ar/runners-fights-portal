@@ -17,9 +17,11 @@ return [
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'login' => 'Login',
-    'login_github' => 'Iniciar sesión con GitHub',
+    'login_github' => 'Log in with GitHub',
+    'login_google' => 'Log in with Google',
     'register' => 'Register',
     'register_github' => 'Register with GitHub',
+    'register_google' => 'Register with Googe',
     'full_name' => 'Full name',
     'enter_full_name' => 'Enter full name',
     'email' => 'Email',
@@ -30,7 +32,8 @@ return [
     'set_password' => 'Set account password',
     'confirm_password' => 'Confirm account password',
     'remember_me' => 'Remember Me',
-    'already_account' => 'Already have an account ?'
+    'already_account' => 'Already have an account ?',
+    'no_account' => 'Don\'t have an account?',
 
 
 ];

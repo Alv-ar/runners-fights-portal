@@ -18,8 +18,10 @@ return [
     'throttle' => 'Demasiados intentos, porfavor pruebe de nuevo en :seconds segundos.',
     'login' => 'Iniciar sesión',
     'login_github' => 'Iniciar sesión con GitHub',
+    'login_google' => 'Iniciar sesión con Google',
     'register' => 'Registrarse',
     'register_github' => 'Registrarse con GitHub',
+    'register_google' => 'Registrarse con Google',
     'full_name' => 'Nombre completo',
     'enter_full_name' => 'Introduce nombre completo',
     'email' => 'Correo electronico',
@@ -30,6 +32,8 @@ return [
     'set_password' => 'Establece la contraseña',
     'confirm_password' => 'Confirma la contraseña',
     'remember_me' => 'Recuerdame',
-    'already_account' => 'Ya tienes una cuenta ?'
+    'already_account' => 'Ya tienes una cuenta ?',
+    'no_account' => 'No tienes una cuenta?',
+
 
 ];
