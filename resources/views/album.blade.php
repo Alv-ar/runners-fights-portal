@@ -27,14 +27,6 @@
 
 
   <style>
-    .carousel-item {
-      height: 100vh;
-    }
-
-    .carousel-slide {
-
-    }
-
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
