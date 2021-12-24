@@ -21,4 +21,6 @@ php artisan migrate
 
 php artisan db:seed --class=SeederTablePermissions
 
+php artisan db:seed --class=AdminUserSeeder
+
 php artisan key:generate

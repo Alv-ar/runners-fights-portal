@@ -1,11 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -31,6 +29,10 @@ Route::get('/album', function () {
     return view('album');
 });
 
+Route::get('/test', function () {
+    return view('test');
+});
+
 
 
 
@@ -43,10 +45,13 @@ Route::group(['middleware' => ['guest']], function() {
     Route::get('login/github/redirect', [LoginController::class, 'githubRedirect']);
     Route::get('login/google', [LoginController::class, 'google']);
     Route::get('login/google/redirect', [LoginController::class, 'googleRedirect']);
+    Route::get('/about', function () {
+        return view('about');
+    });
 
 });
 
-Route::group(['middleware' => ['auth', 'role:Administrator']], function() {
+Route::group(['middleware' => ['auth', 'role:Super-Admin']], function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
