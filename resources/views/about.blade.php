@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Runners Fights</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico')}}" />
     <!-- Font Awesome icons (free version)-->
@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{ asset('template/css/template.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('template/css/template.css') }}" rel="stylesheet" type="text/css" />
     <script src="{{ asset('template/js/template.js') }}"></script>
 
 
@@ -25,7 +25,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="{{ asset('template/img/navbar-logo.svg') }}" alt="..." /></a>
+            <a class="navbar-brand" href="#page-top"><img src="{{ asset('img/runnersfights.png') }}" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Album</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -44,9 +44,54 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Welcome To Our Studio!</div>
+            <div class="masthead-subheading">Welcome To Runners Fights!</div>
             <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+            <ul class="nav justify-content-center">
+                @if(Route::has('login'))
+                @auth
+                <li class="nav-item"><a href="{{ url('logout') }}" class="nav-link" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+                @hasrole('Super-Admin')
+                <li class="nav-item"><a href="{{ url('/home') }}" class="nav-link">Dev</a></li>
+                @else
+                <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+                @endhasrole
+                @else
+                <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Log in</a></li>
+                @if (Route::has('register'))
+                <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
+                @endif
+                @endauth
+                @endif
+                @auth
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                        <div class="d-sm-none d-lg-inline-block">
+                            ¡Hola! {{\Illuminate\Support\Facades\Auth::user()->name}}</div>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div class="dropdown-title">
+                            Bienvenido, {{\Illuminate\Support\Facades\Auth::user()->name}}</div>
+                        <a class="dropdown-item has-icon edit-profile" href="#" data-id="{{ \Auth::id() }}">
+                            <i class="fa fa-user"></i>Editar Perfil de Usuario</a>
+                        <a class="dropdown-item has-icon" data-toggle="modal" data-target="#changePasswordModal" href="#" data-id="{{ \Auth::id() }}"><i class="fa fa-lock"> </i>Cambiar Password</a>
+                        <a href="{{ url('logout') }}" class="dropdown-item has-icon text-danger" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
+                            {{ csrf_field() }}
+                        </form>
+                    </div>
+                </li>
+                @endauth
+            </ul>
         </div>
     </header>
     <!-- Services-->
@@ -88,8 +133,8 @@
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Portfolio</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">Album</h2>
+                <h3 class="section-subheading text-muted">And this is our Unity Project Game</h3>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-6 mb-4">
@@ -184,6 +229,9 @@
                 </div>
             </div>
         </div>
+    </section>
+    <!-- Video-->
+    <section class="page-section" id="video">
     </section>
     <!-- About-->
     <section class="page-section" id="about">

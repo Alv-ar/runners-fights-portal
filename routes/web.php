@@ -33,6 +33,10 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 
 
 
@@ -45,9 +49,6 @@ Route::group(['middleware' => ['guest']], function() {
     Route::get('login/github/redirect', [LoginController::class, 'githubRedirect']);
     Route::get('login/google', [LoginController::class, 'google']);
     Route::get('login/google/redirect', [LoginController::class, 'googleRedirect']);
-    Route::get('/about', function () {
-        return view('about');
-    });
 
 });
 
