@@ -8,7 +8,7 @@
     <style>
   .owl-carousel .item {
     height: 10rem;
-    background: #4DC7A0;
+    background: none;
     padding: 1rem;
   }
   .owl-carousel .item h4 {
@@ -45,17 +45,18 @@
 <body>
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
         <div class="owl-carousel owl-theme mt-5">
-            <div class="item"><h4>1</h4></div>
-            <div class="item"><h4>2</h4></div>
-            <div class="item"><h4>3</h4></div>
-            <div class="item"><h4>4</h4></div>
-            <div class="item"><h4>5</h4></div>
-            <div class="item"><h4>6</h4></div>
-            <div class="item"><h4>7</h4></div>
-            <div class="item"><h4>8</h4></div>
-            <div class="item"><h4>9</h4></div>
-            <div class="item"><h4>10</h4></div>
-            <div class="item"><h4>11</h4></div>
+            <div class="item"><img alt="image" src="{{ asset('img/runnersfights.png') }}"
+                     class="rounded-circle mr-1 thumbnail-rounded user-thumbnail "></div>
+            <div class="item"><img alt="image" src="{{ asset('img/unity.jpg') }}"
+                     class="rounded-circle mr-1 thumbnail-rounded user-thumbnail "></div>
+            <div class="item"><img alt="image" src="{{ asset('img/logo.png') }}"
+                     class="rounded-circle mr-1 thumbnail-rounded user-thumbnail "></div>
+            <div class="item"><img alt="image" src="{{ asset('img/runnersfights.png') }}"
+                     class="rounded-circle mr-1 thumbnail-rounded user-thumbnail "></div>
+            <div class="item"><img alt="image" src="{{ asset('img/unity.jpg') }}"
+                     class="rounded-circle mr-1 thumbnail-rounded user-thumbnail "></div>
+            <div class="item"><img alt="image" src="{{ asset('img/logo.png') }}"
+                     class="rounded-circle mr-1 thumbnail-rounded user-thumbnail "></div>
         </div>
     </div>
 </body>

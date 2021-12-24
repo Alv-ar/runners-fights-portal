@@ -27,6 +27,10 @@ Route::get('/gallery', function () {
     return view('gallery');
 });
 
+Route::get('/album', function () {
+    return view('album');
+});
+
 
 
 
