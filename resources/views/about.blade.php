@@ -46,7 +46,7 @@
     <header class="masthead">
         <div class="container">
             <div class="masthead-subheading">Welcome To Runners Fights!</div>
-            <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+            <div class="masthead-heading text-uppercase">Get ready for the fights!</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
             <ul class="nav justify-content-center pt-5">
                 @if(Route::has('login'))
@@ -106,10 +106,10 @@
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="my-3">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="my-3">Incredible playability</h4>
+                    <p class="text-muted">Inmersive game experience, inmersive sounds effects and a nice catchy Lore. Complimented with a nice battle system to make you keep attention the whole time.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -314,9 +314,9 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/1.jpg') }}" alt="..." />
+                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/keen.jpg') }}" alt="..." />
                         <h4>Keen Abril</h4>
-                        <p class="text-muted">Lead Designer</p>
+                        <p class="text-muted">Developer</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -324,9 +324,9 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/2.jpg') }}" alt="..." />
+                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/roger.jpg') }}" alt="..." />
                         <h4>Roger Capdevila</h4>
-                        <p class="text-muted">Lead Marketer</p>
+                        <p class="text-muted">Developer</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -334,9 +334,9 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/3.jpg') }}" alt="..." />
+                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/raul.jpg') }}" alt="..." />
                         <h4>Raul Díaz</h4>
-                        <p class="text-muted">Lead Developer</p>
+                        <p class="text-muted">Developer</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -344,12 +344,12 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/1.jpg') }}" alt="..." />
+                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/alvar.jpg') }}" alt="..." />
                         <h4>Alvar Recamales</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <p class="text-muted">Developer</p>
+                        <a class="btn btn-dark btn-social mx-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/alvaaaarr/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/alvar-recamales/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
