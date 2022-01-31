@@ -18,7 +18,7 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('about');
 });
 
 Route::get('/gallery', function () {
@@ -52,7 +52,7 @@ Route::group(['middleware' => ['guest']], function() {
 
 });
 
-Route::group(['middleware' => ['auth', 'role:Super-Admin']], function() {
+Route::group(['middleware' => ['auth', 'role:Administrator']], function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);

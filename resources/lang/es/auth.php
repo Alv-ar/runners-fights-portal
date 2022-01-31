@@ -34,6 +34,7 @@ return [
     'remember_me' => 'Recuerdame',
     'already_account' => 'Ya tienes una cuenta ?',
     'no_account' => 'No tienes una cuenta?',
+    'logout' => 'Logout',
 
 
 ];

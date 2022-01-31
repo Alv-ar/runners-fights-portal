@@ -32,12 +32,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services">About the game</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Album</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ranking">Ranking</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">{{ __('main.nav.about_game') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">{{ __('main.nav.album') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ranking">{{ __('main.nav.ranking') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">{{ __('main.nav.about_us') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">{{ __('main.nav.team') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">{{ __('main.nav.contact') }}</a></li>
                 </ul>
             </div>
         </div>
@@ -52,45 +52,43 @@
                 @if(Route::has('login'))
                 @auth
                 <li class="nav-item"><a href="{{ url('logout') }}" class="nav-link" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
-                        Logout
+                        {{ __('auth.logout') }}
                     </a>
                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
                         {{ csrf_field() }}
                     </form>
                 </li>
-                @hasrole('Super-Admin')
-                <li class="nav-item"><a href="{{ url('/home') }}" class="nav-link">Dev</a></li>
+                @hasrole('Administrator')
+                <li class="nav-item"><a href="{{ url('/home') }}" class="nav-link">{{ __('auth.dev') }}</a></li>
                 @else
-                <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">{{ __('main.section1.home') }}</a></li>
                 @endhasrole
                 @else
-                <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Log in</a></li>
+                <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">{{ __('auth.login') }}</a></li>
                 @if (Route::has('register'))
-                <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
+                <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">{{ __('auth.register') }}</a></li>
                 @endif
                 @endauth
                 @endif
                 @auth
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                        <div class="d-sm-none d-lg-inline-block">
-                            ¡Hola! {{\Illuminate\Support\Facades\Auth::user()->name}}</div>
-                    </a>
+                <a href="#perfilModal" data-bs-toggle="modal" class="nav-link nav-link-lg nav-link-user">
+                    ¡Hola! {{\Illuminate\Support\Facades\Auth::user()->name}}
+                </a>
 
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <div class="dropdown-title">
-                            Bienvenido, {{\Illuminate\Support\Facades\Auth::user()->name}}</div>
-                        <a class="dropdown-item has-icon edit-profile" href="#" data-id="{{ \Auth::id() }}">
-                            <i class="fa fa-user"></i>Editar Perfil de Usuario</a>
-                        <a class="dropdown-item has-icon" data-toggle="modal" data-target="#changePasswordModal" href="#" data-id="{{ \Auth::id() }}"><i class="fa fa-lock"> </i>Cambiar Password</a>
-                        <a href="{{ url('logout') }}" class="dropdown-item has-icon text-danger" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </a>
-                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
-                            {{ csrf_field() }}
-                        </form>
-                    </div>
-                </li>
+                <div class="dropdown-menu dropdown-menu-right" id="perfil">
+                    <div class="dropdown-title">
+                        Bienvenido, {{\Illuminate\Support\Facades\Auth::user()->name}}</div>
+                    <a class="dropdown-item has-icon edit-profile" href="#" data-id="{{ \Auth::id() }}">
+                        <i class="fa fa-user"></i>Editar Perfil de Usuario</a>
+                    <a class="dropdown-item has-icon" data-toggle="modal" data-target="#changePasswordModal" href="#" data-id="{{ \Auth::id() }}"><i class="fa fa-lock"> </i>Cambiar Password</a>
+                    <a href="{{ url('logout') }}" class="dropdown-item has-icon text-danger" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
+                        {{ csrf_field() }}
+                    </form>
+                </div>
+
                 @endauth
             </ul>
         </div>
@@ -463,6 +461,167 @@
             </div>
         </div>
     </footer>
+    @auth
+    <!-- Perfil Modal-->
+    <div class="portfolio-modal modal fade" id="perfilModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg')}}" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">¡Hola! {{\Illuminate\Support\Facades\Auth::user()->name}}</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <p><a href="#EditProfileModal" data-bs-toggle="modal">Profile changes</a></p>
+                                <p><a href="#ChangePasswordModal" data-bs-toggle="modal">Password changes</a></p>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-times me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Change Profile Modal-->
+    <div class="portfolio-modal modal fade" id="EditProfileModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg')}}" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Edit Profile</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+
+                                <form method="POST" id="editProfileForm" enctype="multipart/form-data">
+                                    <div class="modal-body">
+                                        <div class="alert alert-danger d-none" id="editProfileValidationErrorsBox"></div>
+                                        <input type="hidden" name="user_id" id="pfUserId">
+                                        <input type="hidden" name="is_active" value="1">
+                                        {{csrf_field()}}
+                                        <div class="row">
+                                            <div class="form-group col-sm-6">
+                                                <label>Name:</label><span class="required">*</span>
+                                                <input type="text" name="name" id="pfName" class="form-control" required autofocus tabindex="1">
+                                            </div>
+                                            <div class="form-group col-sm-6 d-flex">
+                                                <div class="col-sm-4 col-md-6 pl-0 form-group">
+                                                    <label>Profile Image:</label>
+                                                    <br>
+                                                    <label class="image__file-upload btn btn-primary text-white" tabindex="2"> Choose
+                                                        <input type="file" name="photo" id="pfImage" class="d-none">
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3 preview-image-video-container float-right mt-1">
+                                                    <img id='edit_preview_photo' class="img-thumbnail user-img user-profile-img profilePicture" src="{{asset('img/logo.png')}}" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-sm-6">
+                                                <label>Email:</label><span class="required">*</span>
+                                                <input type="text" name="email" id="pfEmail" class="form-control" required tabindex="3">
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <button type="submit" class="btn btn-primary btn-xl text-uppercase" id="btnPrEditSave" data-bs-dismiss="modal" data-loading-text="<span class='spinner-border spinner-border-sm'></span> Processing...">Save</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal-->
+    <div class="portfolio-modal modal fade" id="ChangePasswordModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg')}}" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Change Password</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+
+                                <form method="POST" id='changePasswordForm'>
+                                    <div class="modal-body">
+                                        @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                        @endif
+                                        <div class="alert alert-danger d-none" id=""></div>
+                                        <input type="hidden" name="is_active" value="1">
+                                        <input type="hidden" name="user_id" id="editPasswordValidationErrorsBox">
+                                        {{csrf_field()}}
+                                        <div class="row">
+                                            <div class="form-group col-sm-12">
+                                                <label>Current Password:</label><span class="required confirm-pwd"></span><span class="required">*</span>
+                                                <div class="input-group">
+                                                    <input class="form-control input-group__addon" id="pfCurrentPassword" type="password" name="password_current" required>
+                                                    <div class="input-group-append input-group__icon">
+                                                        <span class="input-group-text changeType">
+                                                            <i class="icon-ban icons"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label>New Password:</label><span class="required confirm-pwd"></span><span class="required">*</span>
+                                                <div class="input-group">
+                                                    <input class="form-control input-group__addon" id="pfNewPassword" type="password" name="password" required>
+                                                    <div class="input-group-append input-group__icon">
+                                                        <span class="input-group-text changeType">
+                                                            <i class="icon-ban icons"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label>Confirm Password:</label><span class="required confirm-pwd"></span><span class="required">*</span>
+                                                <div class="input-group">
+                                                    <input class="form-control input-group__addon" id="pfNewConfirmPassword" type="password" name="password_confirmation" required>
+                                                    <div class="input-group-append input-group__icon">
+                                                        <span class="input-group-text changeType">
+                                                            <i class="icon-ban icons"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <button type="submit" class="btn btn-primary" id="btnPrPasswordEditSave" data-loading-text="<span class='spinner-border spinner-border-sm'></span> Processing...">Save</button>
+                                            <button type="button" class="btn btn-light ml-1" data-dismiss="modal">Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @endauth
     <!-- Portfolio Modals-->
     <!-- Portfolio item 1 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">

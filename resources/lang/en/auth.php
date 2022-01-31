@@ -34,6 +34,8 @@ return [
     'remember_me' => 'Remember Me',
     'already_account' => 'Already have an account ?',
     'no_account' => 'Don\'t have an account?',
+    'logout' => 'Logout',
+    'dev' => 'Administration'
 
 
 ];
