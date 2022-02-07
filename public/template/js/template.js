@@ -1,6 +1,3 @@
-//TODO TEMPLATE BOOTSTRAP TESTING 
-
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function

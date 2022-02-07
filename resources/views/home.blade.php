@@ -10,7 +10,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="text-center">Dashboard Content</h3>
+                            <h3 class="text-center">Welcome to Administrators Page {{\Illuminate\Support\Facades\Auth::user()->name}}</h3>
                         </div>
                     </div>
                 </div>

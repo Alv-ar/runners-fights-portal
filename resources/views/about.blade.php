@@ -38,6 +38,23 @@
                     <li class="nav-item"><a class="nav-link" href="#about">{{ __('main.nav.about_us') }}</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">{{ __('main.nav.team') }}</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">{{ __('main.nav.contact') }}</a></li>
+                    @if(Route::has('login'))
+                    @auth
+                    @hasrole('Administrator')
+                    <li class="nav-item"><a href="{{ url('/home') }}" class="nav-link">{{ __('auth.dev') }}</a></li>
+                    @endhasrole
+                    @else
+                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">{{ __('auth.login') }}</a></li>
+                    @if (Route::has('register'))
+                    <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">{{ __('auth.register') }}</a></li>
+                    @endif
+                    @endauth
+                    @endif
+                    @auth
+                    <li class="nav-item"><a href="#perfilModal" data-bs-toggle="modal" class="nav-link nav-link-lg nav-link-user">
+                            Profile
+                        </a></li>
+                    @endauth
                 </ul>
             </div>
         </div>
@@ -48,49 +65,6 @@
             <div class="masthead-subheading">Welcome To Runners Fights!</div>
             <div class="masthead-heading text-uppercase">Get ready for the fights!</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
-            <ul class="nav justify-content-center pt-5">
-                @if(Route::has('login'))
-                @auth
-                <li class="nav-item"><a href="{{ url('logout') }}" class="nav-link" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
-                        {{ __('auth.logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
-                        {{ csrf_field() }}
-                    </form>
-                </li>
-                @hasrole('Administrator')
-                <li class="nav-item"><a href="{{ url('/home') }}" class="nav-link">{{ __('auth.dev') }}</a></li>
-                @else
-                <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">{{ __('main.section1.home') }}</a></li>
-                @endhasrole
-                @else
-                <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">{{ __('auth.login') }}</a></li>
-                @if (Route::has('register'))
-                <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">{{ __('auth.register') }}</a></li>
-                @endif
-                @endauth
-                @endif
-                @auth
-                <a href="#perfilModal" data-bs-toggle="modal" class="nav-link nav-link-lg nav-link-user">
-                    ¡Hola! {{\Illuminate\Support\Facades\Auth::user()->name}}
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right" id="perfil">
-                    <div class="dropdown-title">
-                        Bienvenido, {{\Illuminate\Support\Facades\Auth::user()->name}}</div>
-                    <a class="dropdown-item has-icon edit-profile" href="#" data-id="{{ \Auth::id() }}">
-                        <i class="fa fa-user"></i>Editar Perfil de Usuario</a>
-                    <a class="dropdown-item has-icon" data-toggle="modal" data-target="#changePasswordModal" href="#" data-id="{{ \Auth::id() }}"><i class="fa fa-lock"> </i>Cambiar Password</a>
-                    <a href="{{ url('logout') }}" class="dropdown-item has-icon text-danger" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                    </a>
-                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
-                        {{ csrf_field() }}
-                    </form>
-                </div>
-
-                @endauth
-            </ul>
         </div>
     </header>
     <!-- Services-->
@@ -474,8 +448,14 @@
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">¡Hola! {{\Illuminate\Support\Facades\Auth::user()->name}}</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <p><a href="#EditProfileModal" data-bs-toggle="modal">Profile changes</a></p>
-                                <p><a href="#ChangePasswordModal" data-bs-toggle="modal">Password changes</a></p>
+                                <p><a href="#EditProfileModal" class="nav-link" data-bs-toggle="modal">Profile changes</a></p>
+                                <p><a href="#ChangePasswordModal" class="nav-link" data-bs-toggle="modal">Password changes</a></p>
+                                <p><a href="{{ url('logout') }}" class="nav-link" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
+                                        {{ __('auth.logout') }}
+                                    </a></p>
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
+                                        {{ csrf_field() }}
+                                    </form>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
                                     Close Project
