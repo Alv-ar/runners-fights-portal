@@ -3,7 +3,7 @@
     Register
 @endsection
 @section('content')
-    <div class="card card-primary">
+    <div class="card">
         <div class="card-header"><h4>{{ __('auth.register')}}</h4></div>
 
         <div class="card-body pt-1">
@@ -66,17 +66,17 @@
                     </div>
                     <div class="col-md-12 mt-4">
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                            <button type="submit" class="btn btn-lg btn-block" tabindex="4">
                                 {{ __('auth.register') }}
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="flex items-center justify-end mt-4">
-                <a href="{{ url('login/github') }}" class="btn btn-primary btn-lg btn-block">
+                <a href="{{ url('login/github') }}" class="btn btn-lg btn-block">
                     <span class="fa fa-github"></span> {{ __('auth.register_github') }}
                 </a> 
-                <a href="{{ url('login/google') }}" class="btn btn-primary btn-lg btn-block">
+                <a href="{{ url('login/google') }}" class="btn btn-lg btn-block">
                     <span class="fa fa-google"></span> {{ __('auth.register_google') }}
                 </a> 
                 </div>

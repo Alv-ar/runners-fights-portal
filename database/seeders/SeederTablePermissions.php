@@ -21,12 +21,6 @@ class SeederTablePermissions extends Seeder
             'create-role',
             'edit-role',
             'delete-role',
-
-            //Operacions sobre tabla blogs
-            'view-blog',
-            'create-blog',
-            'edit-blog',
-            'delete-blog'
         ];
 
         foreach($permissions as $permission) {

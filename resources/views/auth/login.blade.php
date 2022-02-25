@@ -3,7 +3,7 @@
 Login
 @endsection
 @section('content')
-<div class="card card-primary">
+<div class="card card">
     <div class="card-header">
         <h4>{{ __('auth.login') }}</h4>
     </div>
@@ -51,15 +51,15 @@ Login
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                <button type="submit" class="btn btn-lg btn-block" tabindex="4">
                     {{ __('auth.login')}}
                 </button>
             </div>
 
-            <a href="{{ url('login/github') }}" class="btn btn-primary btn-lg btn-block">
+            <a href="{{ url('login/github') }}" class="btn btn-lg btn-block">
                 <span class="fa fa-github"></span> {{ __('auth.login_github')}}
             </a>
-            <a href="{{ url('login/google') }}" class="btn btn-primary btn-lg btn-block">
+            <a href="{{ url('login/google') }}" class="btn btn-lg btn-block">
                 <span class="fa fa-google"></span> {{ __('auth.login_google')}}
             </a>
         </form>
