@@ -205,6 +205,24 @@
     </section>
     <!-- Ranking-->
     <section class="page-section" id="ranking">
+        <table class="table table-striped mt-2">
+            <thead style="background-color:#8946A6">
+                <th style="display: none;">ID</th>
+                <th style="color:#fff;">Nombre</th>
+                <th style="color:#fff;">E-mail</th>
+                <th style="color:#fff;">Puntos</th>
+            </thead>
+            <tbody>
+                @foreach ($users as $user)
+                <tr>
+                    <td style="display: none;">{{ $user->id }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->wins }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </section>
     <!-- About-->
     <section class="page-section" id="about">
@@ -453,9 +471,9 @@
                                 <p><a href="{{ url('logout') }}" class="nav-link" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
                                         {{ __('auth.logout') }}
                                     </a></p>
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
-                                        {{ csrf_field() }}
-                                    </form>
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
+                                    {{ csrf_field() }}
+                                </form>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
                                     Close Project

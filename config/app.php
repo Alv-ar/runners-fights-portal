@@ -180,6 +180,9 @@ return [
 
         //Socialite
         Laravel\Socialite\SocialiteServiceProvider::class,
+
+        //Provider to load data on view load
+        App\Providers\ViewServiceProvider::class
     ],
 
     /*
