@@ -204,28 +204,50 @@
         </div>
     </section>
     <!-- Ranking-->
-    <section class="page-section" id="ranking">
-        <table class="table table-striped mt-2">
-            <thead style="background-color:#8946A6">
-                <th style="display: none;">ID</th>
-                <th style="color:#fff;">Nombre</th>
-                <th style="color:#fff;">E-mail</th>
-                <th style="color:#fff;">Puntos</th>
-            </thead>
-            <tbody>
-                @foreach ($users as $user)
-                <tr>
-                    <td style="display: none;">{{ $user->id }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->wins }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+    <section class="page-section ranking" id="ranking">
+        <div class="table-responsive">
+            <table class="table table-borderless">
+                <thead style="background-color:#8946A6">
+                    <th style="display: none;">ID</th>
+                    <th style="color:#fff;">Nombre</th>
+                    <th style="color:#fff;">E-mail</th>
+                    <th style="color:#fff;">Puntos</th>
+                </thead>
+                <tbody>
+                    @foreach ($users as $user)
+                    @auth
+                    @if(Auth::user()->name == $user->name)
+                    <tr class="table-active">
+                        <td style="display: none;">{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->wins }}</td>
+                    </tr>
+                    @else
+                    <tr>
+                        <td style="display: none;">{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->wins }}</td>
+                    </tr>
+                    @endif
+                    @endauth
+                    @guest
+                    <tr>
+                        <td style="display: none;">{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->wins }}</td>
+                    </tr>
+                    @endguest
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
     </section>
     <!-- About-->
-    <section class="page-section" id="about">
+    <section class="page-section bg-light" id="about">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">About</h2>
@@ -233,7 +255,7 @@
             </div>
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/1.jpg')}}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/teamWork3.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>2009-2011</h4>
@@ -245,7 +267,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/2.jpg')}}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/teamWork1.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>March 2011</h4>
@@ -257,7 +279,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/3.jpg')}}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/rogerRubio.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>December 2015</h4>
@@ -269,7 +291,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/4.jpg')}}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/keenUwU.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>July 2020</h4>
@@ -295,7 +317,7 @@
         </div>
     </section>
     <!-- Team-->
-    <section class="page-section bg-light" id="team">
+    <section class="page-section" id="team">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
