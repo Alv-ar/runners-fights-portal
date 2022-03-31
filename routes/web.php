@@ -52,8 +52,10 @@ Route::group(['middleware' => ['guest']], function() {
 
 });
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+
 Route::group(['middleware' => ['auth', 'role:Administrator']], function() {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+    
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('blogs', BlogController::class);
