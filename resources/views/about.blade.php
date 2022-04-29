@@ -10,7 +10,7 @@
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico')}}" />
     <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v6.1.1/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
@@ -40,7 +40,7 @@
                     <li class="nav-item"><a class="nav-link" href="#contact">{{ __('main.nav.contact') }}</a></li>
                     @if(Route::has('login'))
                     @auth
-                    @hasrole('Administrator')
+                    @hasrole('Administrador')
                     <li class="nav-item"><a href="{{ url('/home') }}" class="nav-link">{{ __('auth.dev') }}</a></li>
                     @endhasrole
                     @else
@@ -62,17 +62,21 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Welcome To Runners Fights!</div>
-            <div class="masthead-heading text-uppercase">Get ready for the fights!</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+            <div class="masthead-subheading">Bienvenido To Runners Fights!</div>
+
+            @auth 
+            <a class="btn btn-primary btn-xl text-uppercase" id="downloadBtn" download="test.txt">Descargar</a>
+            @else
+            <a class="btn btn-primary btn-xl text-uppercase disabled" href="#services" id="downloadBtn">Descargar</a>
+            @endauth
         </div>
     </header>
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Services</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">Run!</h2>
+                <h3 class="section-subheading text-muted"></h3>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
@@ -80,24 +84,25 @@
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="my-3">Incredible playability</h4>
-                    <p class="text-muted">Inmersive game experience, inmersive sounds effects and a nice catchy Lore. Complimented with a nice battle system to make you keep attention the whole time.</p>
+                    <h4 class="my-3"></h4>
+                    <p class="text-muted">Runners Fights es una aventura de acción clásica en 2D ambientada en un vasto mundo interconectado. Descubre ciudades y sus rascacielos. Combate contra criaturas futuristas y combate contra otros jugadores en mapas interactivos.</p>
+                    <!-- Inmersive game experience, inmersive sounds effects and a nice catchy Lore. Complimented with a nice battle system to make you keep attention the whole time. -->
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                        <i class="fas fa-headset fa-stack-1x fa-inverse"></i>           
                     </span>
-                    <h4 class="my-3">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="my-3"></h4>
+                    <p class="text-muted">¿Preparado para más? Consigue Runners Fights hoy mismo y sumérgete en sus modos Individual y Multijugador, llenos de acción.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        <i class="fas fa-brands fa-steam fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="my-3">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="my-3"></h4>
+                    <p class="text-muted">Nuevas aventuras y nuevos personajes en un futuro. Nos podras encontrar en fechas futuras en Steam!</p>
                 </div>
             </div>
         </div>
@@ -221,14 +226,14 @@
                         <td style="display: none;">{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->wins }}</td>
+                        <td>{{ $user->kills }}</td>
                     </tr>
                     @else
                     <tr>
                         <td style="display: none;">{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->wins }}</td>
+                        <td>{{ $user->kills }}</td>
                     </tr>
                     @endif
                     @endauth
@@ -237,7 +242,7 @@
                         <td style="display: none;">{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->wins }}</td>
+                        <td>{{ $user->kills }}</td>
                     </tr>
                     @endguest
                     @endforeach
@@ -258,11 +263,11 @@
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/teamWork3.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>2009-2011</h4>
-                            <h4 class="subheading">Our Humble Beginnings</h4>
+                            <h4>Noviembre 2021</h4>
+                            <h4 class="subheading">Primera reunión del equipo</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p class="text-muted">Aquí empieza nuestro proyecto, nos reunimos por primera vez como grupo para distribuir roles y para organizarnos.</p>
                         </div>
                     </div>
                 </li>
@@ -270,11 +275,11 @@
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/teamWork1.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>March 2011</h4>
-                            <h4 class="subheading">An Agency is Born</h4>
+                            <h4>Enero 2022</h4>
+                            <h4 class="subheading"></h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p class="text-muted">Dos meses más tarde de nuestro inicio ya logramos muchos avances tanto en el equipo de Unity como en el equipo Web. Conjuntamente, sumamos un total de 35 commits.</p>
                         </div>
                     </div>
                 </li>
@@ -282,11 +287,11 @@
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/rogerRubio.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>December 2015</h4>
-                            <h4 class="subheading">Transition to Full Service</h4>
+                            <h4>Marzo 2022</h4>
+                            <h4 class="subheading"></h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p class="text-muted">Marzo fue un gran mes para nuestro grupo, logramos acabar la página web, la API propia y pudimos por primera vez probar la parte de multijugador de nuestro juego. </p>
                         </div>
                     </div>
                 </li>
@@ -294,11 +299,11 @@
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/keenUwU.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>July 2020</h4>
-                            <h4 class="subheading">Phase Two Expansion</h4>
+                            <h4>Mayo 2022</h4>
+                            <h4 class="subheading"></h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p class="text-muted">Con la llegada de mayo llegaron también los nervios, nuestro último mes para acabar un proyecto al que habíamos dedicado mucho tiempo. Logramos acabar todas las tareas esperadas antes de la fecha límite y obtuvimos un buen resultado.</p>
                         </div>
                     </div>
                 </li>

@@ -45,6 +45,7 @@ Route::get('/about', function () {
 Auth::routes();
 
 Route::group(['middleware' => ['guest']], function() {
+    //si no estas logueado puedes acceder a estas rutas y funciones
     Route::get('login/github', [LoginController::class, 'github']);
     Route::get('login/github/redirect', [LoginController::class, 'githubRedirect']);
     Route::get('login/google', [LoginController::class, 'google']);
@@ -54,8 +55,8 @@ Route::group(['middleware' => ['guest']], function() {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
-Route::group(['middleware' => ['auth', 'role:Administrator']], function() {
-    
+Route::group(['middleware' => ['auth', 'role:Administrador']], function() {
+    //si es administrador puede acceder a las siguientes rutas, si no le dira que no tiene permisos.
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('blogs', BlogController::class);

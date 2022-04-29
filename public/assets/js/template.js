@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -41,5 +43,11 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+
+    const downloadBtn = document.getElementById('downloadBtn');
+    downloadBtn.addEventListener('click', () => {
+        
+    });
+
 
 });

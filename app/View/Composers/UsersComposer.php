@@ -15,7 +15,8 @@ class UsersComposer
      */
     public function compose(View $view)
     {
-        $users = User::orderBy('wins', 'desc')->paginate(10);
+        //envia a el viewServiceProvider los datos de user al cargarse la vista
+        $users = User::orderBy('kills', 'desc')->paginate(10);
         $view->with('users', $users);
     }
 }

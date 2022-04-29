@@ -25,6 +25,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //recoge los datos que le envia el composer y lo envia a la vista about a cargarse
         View::composer('about', UsersComposer::class);
     }
 }
