@@ -11404,6 +11404,7 @@ p {
     height: 2rem;
     transition: height 0.3s ease-in-out;
   }
+  /*color fondo navbar cuando hago scroll*/
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
