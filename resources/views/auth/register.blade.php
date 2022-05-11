@@ -64,22 +64,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 mt-4">
-                        <div class="form-group">
+                    <div class="row">
+                        <div class="form-group text-center">
                             <button type="submit" class="btn btn-lg btn-block" tabindex="4">
                                 {{ __('auth.register') }}
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="flex items-center justify-end mt-4">
-                <a href="{{ url('login/github') }}" class="btn btn-lg btn-block">
-                    <span class="fa fa-github"></span> {{ __('auth.register_github') }}
-                </a> 
-                <a href="{{ url('login/google') }}" class="btn btn-lg btn-block">
-                    <span class="fa fa-google"></span> {{ __('auth.register_google') }}
-                </a> 
+                <div class="row">
+                    <div class="flex items-center justify-end mt-4 text-center">
+                    <a href="{{ url('login/github') }}" class="btn btn-lg btn-block">
+                        <span class="fa-brands fa-github"></span> {{ __('auth.register_github') }}
+                    </a> 
+                    <a href="{{ url('login/google') }}" class="btn btn-lg btn-block">
+                        <span class="fa-brands fa-google"></span> {{ __('auth.register_google') }}
+                    </a> 
+                    </div>
                 </div>
+                
             </form>
         </div>
     </div>
@@ -88,4 +91,6 @@
          <a
                 href="{{ route('login') }}">{{ __('auth.login') }}</a>
     </div>
+    <script src="https://use.fontawesome.com/releases/v6.1.1/js/all.js" crossorigin="anonymous"></script>
+
 @endsection

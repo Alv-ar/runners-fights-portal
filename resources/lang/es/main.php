@@ -12,6 +12,20 @@ return [
     |
     */
 
+    'nav' => [
+        'about_game' => 'Sobre el juego',
+        'album' => 'Album',
+        'ranking' => 'Ranking',
+        'about_us' => 'Timeline',
+        'team' => 'Equipo',
+    ],
+    'section1' => [
+        'title' => 'Welcome To Runners Fights!',
+        'subtitle' => 'Get ready for the fights!',
+        'more' => 'Tell Me More',
+        'home' => 'Home',
+    ],
+
     'failed' => 'These credentials do not match our records.',
     
 ];

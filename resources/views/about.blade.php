@@ -35,7 +35,6 @@
                     <li class="nav-item"><a class="nav-link" href="#ranking">{{ __('main.nav.ranking') }}</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">{{ __('main.nav.about_us') }}</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">{{ __('main.nav.team') }}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">{{ __('main.nav.contact') }}</a></li>
                     @if(Route::has('login'))
                     @auth
                     @hasrole('Administrador')
@@ -69,7 +68,7 @@
             @endauth
         </div>
     </header>
-    <!-- Services-->
+    <!-- Information-->
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
@@ -105,7 +104,7 @@
             </div>
         </div>
     </section>
-    <!-- Portfolio Grid-->
+    <!-- Album Grid-->
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
             <div class="text-center">
@@ -114,13 +113,13 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 1-->
+                    <!-- Album item 1-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{ asset('template/img/portfolio/1.jpg')}}" alt="..." />
+                            <img class="img-fluid" src="{{ asset('img/neoncity.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Threads</div>
@@ -129,13 +128,13 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 2-->
+                    <!-- Album item 2-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{ asset('template/img/portfolio/2.jpg')}}" alt="..." />
+                            <img class="img-fluid" src="{{ asset('img/neoncity.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Explore</div>
@@ -144,62 +143,17 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 3-->
+                    <!-- Album item 3-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{ asset('template/img/portfolio/3.jpg')}}" alt="..." />
+                            <img class="img-fluid" src="{{ asset('img/neoncity.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Finish</div>
                             <div class="portfolio-caption-subheading text-muted">Identity</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                    <!-- Portfolio item 4-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ asset('template/img/portfolio/4.jpg')}}" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Lines</div>
-                            <div class="portfolio-caption-subheading text-muted">Branding</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                    <!-- Portfolio item 5-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ asset ('template/img/portfolio/5.jpg')}}" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Southwest</div>
-                            <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <!-- Portfolio item 6-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ asset ('template/img/portfolio/6.jpg')}}" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Window</div>
-                            <div class="portfolio-caption-subheading text-muted">Photography</div>
                         </div>
                     </div>
                 </div>
@@ -373,28 +327,8 @@
             </div>
         </div>
     </section>
-    <!-- Clients-->
-    <!--
-    <div class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{{ asset('template/img/logos/microsoft.svg')}}" alt="..." /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{{ asset('template/img/logos/google.svg')}}" alt="..." /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{{ asset('template/img/logos/facebook.svg')}}" alt="..." /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{{ asset('template/img/logos/ibm.svg')}}" alt="..." /></a>
-                </div>
-            </div>
-        </div>
-    </div>-->
     <!-- Footer-->
-    <footer class="footer py-4">
+    <footer class="footer py-4 bg-light">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-start">Copyright &copy; Runners Fights 2021</div>
@@ -423,8 +357,6 @@
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">¡Hola! {{\Illuminate\Support\Facades\Auth::user()->name}}</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <p><a href="#EditProfileModal" class="nav-link" data-bs-toggle="modal">Profile changes</a></p>
-                                <p><a href="#ChangePasswordModal" class="nav-link" data-bs-toggle="modal">Password changes</a></p>
                                 <p><a href="{{ url('logout') }}" class="nav-link" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
                                         {{ __('auth.logout') }}
                                     </a></p>
@@ -442,143 +374,9 @@
             </div>
         </div>
     </div>
-    <!-- Change Profile Modal-->
-    <div class="portfolio-modal modal fade" id="EditProfileModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg')}}" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Edit Profile</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-
-                                <form method="POST" id="editProfileForm" enctype="multipart/form-data">
-                                    <div class="modal-body">
-                                        <div class="alert alert-danger d-none" id="editProfileValidationErrorsBox"></div>
-                                        <input type="hidden" name="user_id" id="pfUserId">
-                                        <input type="hidden" name="is_active" value="1">
-                                        {{csrf_field()}}
-                                        <div class="row">
-                                            <div class="form-group col-sm-6">
-                                                <label>Name:</label><span class="required">*</span>
-                                                <input type="text" name="name" id="pfName" class="form-control" required autofocus tabindex="1">
-                                            </div>
-                                            <div class="form-group col-sm-6 d-flex">
-                                                <div class="col-sm-4 col-md-6 pl-0 form-group">
-                                                    <label>Profile Image:</label>
-                                                    <br>
-                                                    <label class="image__file-upload btn btn-primary text-white" tabindex="2"> Choose
-                                                        <input type="file" name="photo" id="pfImage" class="d-none">
-                                                    </label>
-                                                </div>
-                                                <div class="col-sm-3 preview-image-video-container float-right mt-1">
-                                                    <img id='edit_preview_photo' class="img-thumbnail user-img user-profile-img profilePicture" src="{{asset('img/logo.png')}}" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-sm-6">
-                                                <label>Email:</label><span class="required">*</span>
-                                                <input type="text" name="email" id="pfEmail" class="form-control" required tabindex="3">
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <button type="submit" class="btn btn-primary btn-xl text-uppercase" id="btnPrEditSave" data-bs-dismiss="modal" data-loading-text="<span class='spinner-border spinner-border-sm'></span> Processing...">Save</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Change Password Modal-->
-    <div class="portfolio-modal modal fade" id="ChangePasswordModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg')}}" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Change Password</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-
-                                <form method="POST" id='changePasswordForm'>
-                                    <div class="modal-body">
-                                        @if ($errors->any())
-                                        <div class="alert alert-danger">
-                                            <ul>
-                                                @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                        @endif
-                                        <div class="alert alert-danger d-none" id=""></div>
-                                        <input type="hidden" name="is_active" value="1">
-                                        <input type="hidden" name="user_id" id="editPasswordValidationErrorsBox">
-                                        {{csrf_field()}}
-                                        <div class="row">
-                                            <div class="form-group col-sm-12">
-                                                <label>Current Password:</label><span class="required confirm-pwd"></span><span class="required">*</span>
-                                                <div class="input-group">
-                                                    <input class="form-control input-group__addon" id="pfCurrentPassword" type="password" name="password_current" required>
-                                                    <div class="input-group-append input-group__icon">
-                                                        <span class="input-group-text changeType">
-                                                            <i class="icon-ban icons"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-sm-12">
-                                                <label>New Password:</label><span class="required confirm-pwd"></span><span class="required">*</span>
-                                                <div class="input-group">
-                                                    <input class="form-control input-group__addon" id="pfNewPassword" type="password" name="password" required>
-                                                    <div class="input-group-append input-group__icon">
-                                                        <span class="input-group-text changeType">
-                                                            <i class="icon-ban icons"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-sm-12">
-                                                <label>Confirm Password:</label><span class="required confirm-pwd"></span><span class="required">*</span>
-                                                <div class="input-group">
-                                                    <input class="form-control input-group__addon" id="pfNewConfirmPassword" type="password" name="password_confirmation" required>
-                                                    <div class="input-group-append input-group__icon">
-                                                        <span class="input-group-text changeType">
-                                                            <i class="icon-ban icons"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <button type="submit" class="btn btn-primary" id="btnPrPasswordEditSave" data-loading-text="<span class='spinner-border spinner-border-sm'></span> Processing...">Save</button>
-                                            <button type="button" class="btn btn-light ml-1" data-dismiss="modal">Cancel
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     @endauth
-    <!-- Portfolio Modals-->
-    <!-- Portfolio item 1 modal popup-->
+    <!-- Album Modals-->
+    <!-- Album item 1 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -588,20 +386,10 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="{{ asset('template/img/portfolio/1.jpg')}}" alt="..." />
+                                <h2 class="text-uppercase">Modo historia</h2>
+                                <p class="item-intro text-muted"></p>
+                                <img class="img-fluid d-block mx-auto" src="{{ asset('img/neoncity.jpg')}}" alt="..." />
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Threads
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Illustration
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
                                     Close Project
@@ -613,7 +401,7 @@
             </div>
         </div>
     </div>
-    <!-- Portfolio item 2 modal popup-->
+    <!-- Album item 2 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -623,20 +411,10 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
+                                <h2 class="text-uppercase">Multijugador</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="{{ asset('template/img/portfolio/2.jpg')}}" alt="..." />
+                                <img class="img-fluid d-block mx-auto" src="{{ asset('img/neoncity.jpg')}}" alt="..." />
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Explore
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Graphic Design
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
                                     Close Project
@@ -648,7 +426,7 @@
             </div>
         </div>
     </div>
-    <!-- Portfolio item 3 modal popup-->
+    <!-- Album item 3 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -658,20 +436,10 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
+                                <h2 class="text-uppercase">Easter eggs</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="{{ asset('template/img/portfolio/3.jpg') }}" alt="..." />
+                                <img class="img-fluid d-block mx-auto" src="{{ asset('img/neoncity.jpg') }}" alt="..." />
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Finish
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Identity
-                                    </li>
-                                </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
                                     Close Project
@@ -683,111 +451,8 @@
             </div>
         </div>
     </div>
-    <!-- Portfolio item 4 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg')}}" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="{{ asset('template/img/portfolio/4.jpg')}}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Lines
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Branding
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 5 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg') }}" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="{{ asset('template/img/portfolio/5.jpg') }}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Southwest
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Website Design
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio item 6 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg') }}" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="{{ asset ('template/img/portfolio/6.jpg') }}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Window
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Photography
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-times me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 
 </html>
