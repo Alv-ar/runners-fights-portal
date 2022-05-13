@@ -119,11 +119,11 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{ asset('img/neoncity.jpg')}}" alt="..." />
+                            <img class="img-fluid" src="{{ asset('img/tutorial.png')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Threads</div>
-                            <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            <div class="portfolio-caption-heading">Tutorial in-game</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
                         </div>
                     </div>
                 </div>
@@ -134,11 +134,11 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{ asset('img/neoncity.jpg')}}" alt="..." />
+                            <img class="img-fluid" src="{{ asset('img/multi.png')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Explore</div>
-                            <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            <div class="portfolio-caption-heading">Multiplayer</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
                         </div>
                     </div>
                 </div>
@@ -149,11 +149,11 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{ asset('img/neoncity.jpg')}}" alt="..." />
+                            <img class="img-fluid" src="{{ asset('img/muerte.png')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Finish</div>
-                            <div class="portfolio-caption-subheading text-muted">Identity</div>
+                            <div class="portfolio-caption-heading">Easter Eggs</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
                         </div>
                     </div>
                 </div>
@@ -284,9 +284,7 @@
                         <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/keen.jpg') }}" alt="..." />
                         <h4>Keen Abril</h4>
                         <p class="text-muted">Developer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagramygfuydgfuhgudfhgufdhghdf"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/keen-aaron-abril-pangan-663a3b214/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -294,7 +292,6 @@
                         <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/roger.jpg') }}" alt="..." />
                         <h4>Roger Capdevila</h4>
                         <p class="text-muted">Developer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/rogerc_02/"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/roger-capdevila-perez"><i class="fab fa-linkedin-in"></i></a>
                     </div>
@@ -304,7 +301,6 @@
                         <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/raul.jpg') }}" alt="..." />
                         <h4>Raul Díaz</h4>
                         <p class="text-muted">Developer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/rauldz/"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/ra%C3%BAl-d%C3%ADaz-olmedo-999b0a223/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
@@ -314,7 +310,6 @@
                         <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/alvar.jpg') }}" alt="..." />
                         <h4>Alvar Recamales</h4>
                         <p class="text-muted">Developer</p>
-                        <a class="btn btn-dark btn-social mx-2" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/alvaaaarr/"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/alvar-recamales/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
@@ -332,15 +327,6 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-start">Copyright &copy; Runners Fights 2021</div>
-                <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
-                </div>
             </div>
         </div>
     </footer>
@@ -386,13 +372,13 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Modo historia</h2>
+                                <h2 class="text-uppercase">Tutoral in-game</h2>
                                 <p class="item-intro text-muted"></p>
-                                <img class="img-fluid d-block mx-auto" src="{{ asset('img/neoncity.jpg')}}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <img class="img-fluid d-block mx-auto" src="{{ asset('img/tutorial.png')}}" alt="..." />
+                                <p>Para los nuevos usuarios tenemos un tutorial in-game para aprender a jugar y poder pasar los niveles mas facilmente</p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
@@ -412,12 +398,12 @@
                             <div class="modal-body">
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">Multijugador</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="{{ asset('img/neoncity.jpg')}}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <p class="item-intro text-muted"></p>
+                                <img class="img-fluid d-block mx-auto" src="{{ asset('img/multi.png')}}" alt="..." />
+                                <p>Tambien hay un modo multijugador donde las partidas son maximo de 4 personas y minimo de 2</p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
@@ -436,13 +422,13 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Easter eggs</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="{{ asset('img/neoncity.jpg') }}" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <h2 class="text-uppercase">Chuk Norris</h2>
+                                <p class="item-intro text-muted">Frases celebres</p>
+                                <img class="img-fluid d-block mx-auto" src="{{ asset('img/muerte.png') }}" alt="..." />
+                                <p></p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Close
                                 </button>
                             </div>
                         </div>
