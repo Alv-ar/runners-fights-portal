@@ -9,18 +9,12 @@ Hemos utilizado Stisla para el frontend scaffolding, Spatie para roles y permiso
 
 ## Antes de nada:
 
-composer update
+composer install
 
 composer dump-autoload
 
 cp .env.example .env
 
-crear BBDD en mysql llamada portal_db
-
-php artisan migrate
-
-php artisan db:seed --class=SeederTablePermissions
-
-php artisan db:seed --class=AdminUserSeeder
+Si dona erro de la key sha de fer:
 
 php artisan key:generate
