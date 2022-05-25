@@ -13,8 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{ asset('assets/css/template.css') }}" rel="stylesheet" type="text/css" />
-    <script src="{{ asset('assets/js/template.js') }}"></script>
+    <link href="{{ asset('assets/css/landing.css') }}" rel="stylesheet" type="text/css" />
+    <script src="{{ asset('assets/js/landing.js') }}"></script>
 
 
 </head>
@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#services">{{ __('main.nav.about_game') }}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">{{ __('main.nav.album') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#album">{{ __('main.nav.album') }}</a></li>
                     <li class="nav-item"><a class="nav-link" href="#ranking">{{ __('main.nav.ranking') }}</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">{{ __('main.nav.about_us') }}</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">{{ __('main.nav.team') }}</a></li>
@@ -49,7 +49,7 @@
                     @endif
                     @auth
                     <li class="nav-item"><a href="#perfilModal" data-bs-toggle="modal" class="nav-link nav-link-lg nav-link-user">
-                            Profile
+                            Perfil
                         </a></li>
                     @endauth
                 </ul>
@@ -105,7 +105,7 @@
         </div>
     </section>
     <!-- Album Grid-->
-    <section class="page-section bg-light" id="portfolio">
+    <section class="page-section bg-light" id="album">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Album</h2>
@@ -114,46 +114,46 @@
             <div class="row">
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Album item 1-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                    <div class="album-item">
+                        <a class="album-link" data-bs-toggle="modal" href="#albumModal1">
+                            <div class="album-hover">
+                                <div class="album-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <img class="img-fluid" src="{{ asset('img/tutorial.png')}}" alt="..." />
                         </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Tutorial in-game</div>
-                            <div class="portfolio-caption-subheading text-muted"></div>
+                        <div class="album-caption">
+                            <div class="album-caption-heading">Tutorial in-game</div>
+                            <div class="album-caption-subheading text-muted"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Album item 2-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                    <div class="album-item">
+                        <a class="album-link" data-bs-toggle="modal" href="#albumModal2">
+                            <div class="album-hover">
+                                <div class="album-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <img class="img-fluid" src="{{ asset('img/multi.png')}}" alt="..." />
                         </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Multiplayer</div>
-                            <div class="portfolio-caption-subheading text-muted"></div>
+                        <div class="album-caption">
+                            <div class="album-caption-heading">Multiplayer</div>
+                            <div class="album-caption-subheading text-muted"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Album item 3-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                    <div class="album-item">
+                        <a class="album-link" data-bs-toggle="modal" href="#albumModal3">
+                            <div class="album-hover">
+                                <div class="album-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <img class="img-fluid" src="{{ asset('img/muerte.png')}}" alt="..." />
                         </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Easter Eggs</div>
-                            <div class="portfolio-caption-subheading text-muted"></div>
+                        <div class="album-caption">
+                            <div class="album-caption-heading">Easter Eggs</div>
+                            <div class="album-caption-subheading text-muted"></div>
                         </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@
             </div>
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/teamWork3.jpg')}}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/teamWork3.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Noviembre 2021</h4>
@@ -223,7 +223,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/teamWork1.jpg')}}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/teamWork1.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Enero 2022</h4>
@@ -235,7 +235,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/rogerRubio.jpg')}}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/rogerRubio.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Marzo 2022</h4>
@@ -247,7 +247,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('template/img/about/keenUwU.jpg')}}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/keenUwU.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Mayo 2022</h4>
@@ -281,7 +281,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/keen.jpg') }}" alt="..." />
+                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/keen.jpg') }}" alt="..." />
                         <h4>Keen Abril</h4>
                         <p class="text-muted">Developer</p>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/keen-aaron-abril-pangan-663a3b214/"><i class="fab fa-linkedin-in"></i></a>
@@ -289,7 +289,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/roger.jpg') }}" alt="..." />
+                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/roger.jpg') }}" alt="..." />
                         <h4>Roger Capdevila</h4>
                         <p class="text-muted">Developer</p>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/rogerc_02/"><i class="fab fa-instagram"></i></a>
@@ -298,7 +298,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/raul.jpg') }}" alt="..." />
+                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/raul.jpg') }}" alt="..." />
                         <h4>Raul Díaz</h4>
                         <p class="text-muted">Developer</p>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/rauldz/"><i class="fab fa-instagram"></i></a>
@@ -307,7 +307,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('template/img/team/alvar.jpg') }}" alt="..." />
+                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/alvar.jpg') }}" alt="..." />
                         <h4>Alvar Recamales</h4>
                         <p class="text-muted">Developer</p>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/alvaaaarr/"><i class="fab fa-instagram"></i></a>
@@ -332,17 +332,18 @@
     </footer>
     @auth
     <!-- Perfil Modal-->
-    <div class="portfolio-modal modal fade" id="perfilModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="album-modal modal fade" id="perfilModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg')}}" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('img/close-icon.svg')}}" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">¡Hola! {{\Illuminate\Support\Facades\Auth::user()->name}}</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <h2 class="text-uppercase">¡Hola! {{\Illuminate\Support\Facades\Auth::user()->name}}</h2><br>
+                                <p class="item-intro text-muted">Puntuacion: {{\Illuminate\Support\Facades\Auth::user()->kills}}</p>
+                                <p class="item-intro text-muted">Email: {{\Illuminate\Support\Facades\Auth::user()->email}}</p>
                                 <p><a href="{{ url('logout') }}" class="nav-link" onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
                                         {{ __('auth.logout') }}
                                     </a></p>
@@ -351,7 +352,7 @@
                                 </form>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close Project
+                                    Cerrar
                                 </button>
                             </div>
                         </div>
@@ -363,10 +364,10 @@
     @endauth
     <!-- Album Modals-->
     <!-- Album item 1 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="album-modal modal fade" id="albumModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg')}}" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('img/close-icon.svg')}}" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -378,7 +379,7 @@
                                 <p>Para los nuevos usuarios tenemos un tutorial in-game para aprender a jugar y poder pasar los niveles mas facilmente</p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close
+                                    Cerrar
                                 </button>
                             </div>
                         </div>
@@ -388,10 +389,10 @@
         </div>
     </div>
     <!-- Album item 2 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="album-modal modal fade" id="albumModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg')}}" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('img/close-icon.svg')}}" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -403,7 +404,7 @@
                                 <p>Tambien hay un modo multijugador donde las partidas son maximo de 4 personas y minimo de 2</p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close
+                                    Cerrar
                                 </button>
                             </div>
                         </div>
@@ -413,10 +414,10 @@
         </div>
     </div>
     <!-- Album item 3 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="album-modal modal fade" id="albumModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('template/img/close-icon.svg')}}" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('img/close-icon.svg')}}" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -428,7 +429,7 @@
                                 <p></p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
-                                    Close
+                                    Cerrar
                                 </button>
                             </div>
                         </div>
