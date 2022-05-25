@@ -22,7 +22,7 @@
                             </button>
                             </div>
                         @endif
-
+                        <!-- PATHC i PUT  es el mateix -->
                         {!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">

@@ -21,25 +21,6 @@ Route::get('/', function () {
     return view('about');
 });
 
-Route::get('/gallery', function () {
-    return view('gallery');
-});
-
-Route::get('/album', function () {
-    return view('album');
-});
-
-Route::get('/test', function () {
-    return view('test');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-
-
-
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
@@ -59,5 +40,4 @@ Route::group(['middleware' => ['auth', 'role:Administrador']], function() {
     //si es administrador puede acceder a las siguientes rutas, si no le dira que no tiene permisos.
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
-    Route::resource('blogs', BlogController::class);
 });

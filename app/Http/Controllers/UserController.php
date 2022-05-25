@@ -29,6 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        //portem tots els rols creats
         $roles = Role::pluck('name','name')->all();
         return view('users.create',compact('roles'));
     }
@@ -49,9 +50,11 @@ class UserController extends Controller
         ]);
     
         $input = $request->all();
+        //fem hash a la pwd
         $input['password'] = Hash::make($input['password']);
     
         $user = User::create($input);
+        //asignem rol
         $user->assignRole($request->input('roles'));
     
         return redirect()->route('users.index');
